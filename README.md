@@ -1,3 +1,8 @@
 # Tic-Tac-Toe-Minimax
 
-In this project I use the minimax algorithm to create a Tic Tac Toe engine that never loses.
+In this project I recreate the game of Tic Tac Toe.
+
+There are different possibilities, you can either play against:
+- another human
+- a random computer
+- a perfect computer (that uses the minimax algorithm).
