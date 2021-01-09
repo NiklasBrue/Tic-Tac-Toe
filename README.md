@@ -1,4 +1,4 @@
-# Tic-Tac-Toe-Minimax
+# Tic-Tac-Toe
 
 In this project I recreate the game of Tic Tac Toe.
 
