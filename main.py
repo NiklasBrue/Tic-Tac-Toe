@@ -1,8 +1,11 @@
+print('Against whom would you like to play?')
+opponent = input('human / random computer ')
+
 import pygame, sys
 import numpy as np
 import time
-from computer import random_computer, available_sqrs,\
-            convert_board_config_to_score, return_best_move
+from computer import random_computer, available_sqrs
+
 from helper_functions import choose_sqr, is_sqr_available,\
             is_board_full, mouse_to_array_position,\
             draw_sign, check_win, draw_horizontal_winning_line,\
@@ -13,10 +16,6 @@ from helper_functions import choose_sqr, is_sqr_available,\
 _BOARD_ROWS = 3
 _BOARD_COLS = 3
 board = np.zeros((_BOARD_ROWS, _BOARD_COLS))
-
-#print('Against whom would you like to play?')
-#opponent = input('human / random computer / perfect computer: ')
-opponent = 'perfect computer'
 
 #initialise pygame
 pygame.init()
@@ -69,25 +68,6 @@ while True:
                     if check_win(board, player):
                         game_over = True
                     player = 1
-                draw_sign(board)
-
-            #human against perfect computer
-            if opponent == 'perfect computer':
-                if player == 1:
-                    if is_sqr_available(board, clicked_row, clicked_col):
-                        choose_sqr(board, clicked_row, clicked_col, 1)
-                        if check_win(board, player):
-                            game_over = True
-                        else:
-                            player = 2
-                if player == 2:
-                    position_x, position_y = return_best_move(board)
-                    choose_sqr(board, position_x, position_y, 2)
-                    if check_win(board, player):
-                        game_over = True
-                    else:
-                        player = 1 
-                
                 draw_sign(board)
 
         if game_over:
